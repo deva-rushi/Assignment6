@@ -1,0 +1,88 @@
+.btn-general {
+    transition: .2s transform ease-in-out;
+    will-change: transform;
+    z-index: 0;
+}
+
+.btn-hover-general {
+    transform: scale(1.05);
+    transform-origin: top left;
+    cursor: pointer;
+}
+
+// sass variables, inheritance and mixin
+.signin-button {
+    @extend .btn-general;
+    @include btn-stats(7px, medium, 900, white, 12px, #317de7);
+    float: right;
+    font-family: monospace;
+
+    &:hover {
+        @extend .btn-hover-general;
+        @include btn-hover-stats(10px, 1px solid black, 15px, $green-theme);
+    }
+}
+
+// sass inheritance and mixin
+.submit-btn {
+    @extend .btn-general;
+    @include btn-stats(8px 40px, medium, 900, white, 10px, #0047AB);
+
+    &:hover {
+        @extend .btn-hover-general;
+        @include btn-hover-stats(10px 42px, 1px solid black, 12px, $green-theme);
+    }
+}
+
+.submit-btn-padding {
+    @include flex-1;
+    padding-top: 30px;
+    justify-content: center;
+}
+
+.view-btn {
+    @extend .btn-general;
+    @include btn-stats(10px 60px, medium, 900, white, 20px, #0047AB);
+
+    &:hover {
+        @extend .btn-hover-general;
+        @include btn-hover-stats(12px 62px, 1px solid black, 25px, $green-theme);
+    }
+}
+
+.learn-btn {
+    @extend .btn-general;
+    @include btn-stats(10px 60px, medium, 900, white, 20px, $green-theme);
+    border: 1px solid white;
+
+    &:hover {
+        @extend .btn-hover-general;
+        @include btn-hover-stats(12px 62px, 1px solid $green-theme, 25px, white);
+        color: $green-theme;
+    }
+}
+
+.details-btn {
+    @extend .btn-general;
+    @include btn-stats(5px 30px, medium, 900,  #097969, 20px, white);
+    border: 1px solid $green-theme;
+
+    &:hover {
+        @extend .btn-hover-general;
+        @include btn-hover-stats(6px 32px, 1px solid white, 25px, $green-theme);
+        color: white;
+    }
+}
+
+.nav-btn {
+    @extend .btn-general;
+    @include btn-stats(2px 10px, small, 800,  rgb(36, 30, 30), 5px, white);
+    border: 1px solid $green-theme;
+    font-family: monospace;
+
+    &:hover {
+        @extend .btn-hover-general;
+        @include btn-hover-stats(3px 12px, 1px solid black, 10px, $green-theme);
+        color: white;
+    }
+}

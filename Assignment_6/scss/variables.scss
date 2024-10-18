@@ -1,0 +1,9 @@
+@use 'sass:color';
+
+// sass variables
+$flex-var: 1;
+$footer-bg-color: #04aa6d;
+$footer-lw-bg-color: #03613e;
+// math operations
+$flex-num: ($flex-var, $flex-var - 0.5, $flex-var - 0.25);
+$green-theme: #097969;

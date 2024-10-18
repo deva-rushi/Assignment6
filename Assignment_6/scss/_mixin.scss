@@ -1,0 +1,29 @@
+@mixin flex-1 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@mixin img-stats($top, $right, $bottom, $left, $width, $position) {
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    width: $width;
+    position: $position;
+}
+
+@mixin btn-stats ($padding, $font-size, $font-weight, $color, $border-radius, $background-color) {
+    padding: $padding;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    color: $color;
+    border-radius: $border-radius;
+    background-color: $background-color;
+}
+
+@mixin btn-hover-stats ($padding, $border, $border-radius, $background-color) {
+    padding: $padding;
+    border: $border;
+    border-radius: $border-radius;
+    background-color: $background-color;
+}

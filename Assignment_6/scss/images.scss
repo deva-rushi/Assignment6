@@ -1,0 +1,73 @@
+.img-overlay {
+    @include flex-1;
+    justify-content: center;
+    position: relative;
+    padding-top: 3rem;
+    background-color: rgb(207, 219, 241);
+}
+
+// sass mixin
+.rec-1 {
+    @include img-stats(0.1px, 0.1px, 0.1px, 5px, 54rem, relative);
+}
+
+.rec-2 {
+    @include img-stats(48px, 300px, 0.1px, 340px, 54rem, absolute);
+}
+
+.img-eur {
+    @include img-stats(100px, 0px, 0px, 400px, 24rem, absolute);
+}
+
+.img-save {
+    @include img-stats(200px, 0px, 0px, 405px, 24rem, absolute);
+}
+
+.img-cta {
+    @include img-stats(280px, 0px, 0px, 400px, 14rem, absolute);
+}
+
+.img-train {
+    @include img-stats(230px, 500px, 0px, 800px, 18rem, absolute);
+}
+
+.img-hun {
+    @include img-stats(35px, 400px, 50px, 800px, 22rem, absolute);
+}
+
+.img-ht {
+    height: 3rem;
+}
+
+.lm-img-1 {
+    width: 850px;
+    padding-top:50px;
+    margin-right: 30px;
+    position: relative;
+}
+
+.lm-img-2 {
+    position: absolute;
+    left: 185px;
+    bottom: 10px;
+    height: 15rem;
+}
+
+.lm-img-3 {
+    position: absolute;
+    left: 130px;
+    top: 80px;
+    height: 10rem;
+}
+
+.lm-img-4 {
+    position: absolute;
+    left: 50px;
+    top: 240px;
+}
+
+.lm-img-5 {
+    position: absolute;
+    left: 140px;
+    top: 262px;
+}

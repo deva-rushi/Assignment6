@@ -1,0 +1,387 @@
+.align {
+    @include flex-1;
+}
+
+// sass use mixin
+.align-stky {
+    @include flex-1;
+    position: fixed;
+    top: 0;
+    width: 98%;
+}
+
+section {
+    padding-top: 85px;
+}
+
+[data="pd-1"] {
+    padding-left: 80px;
+    position: relative;
+    top: 10px;
+}
+
+// sass Nesting
+.foot-bg {
+    @include flex-1;
+    background-color: $footer-bg-color;
+    padding-top: 30px;
+
+    ul {
+        padding-right: 100px;
+
+        > li {
+            text-decoration: underline;
+            text-decoration-color: white;
+            color: white;
+            padding: 9px;
+        }
+    }
+}
+
+// sass loop - control directives
+@for $i from 1 through 3 {
+
+    .fl-#{$i} {
+      flex: nth($flex-num, $i);
+    }
+}
+
+// sass Nesting
+.foot-bg-img {
+    flex: 0.5;
+    margin-left: 10rem;
+
+    > div {
+        @include flex-1;
+
+        > div {
+            flex: 1;
+        }
+    }
+
+    > p {
+        color: white;
+        font-family: sans-serif;
+    }
+}
+
+.foot-bg-img-sz {
+    height: 15rem;
+    padding-top: 25px;
+}
+
+.foot-lw-bg {
+    @include flex-1;
+    background-color: $footer-lw-bg-color;
+}
+
+.foot-lw-bg-img {
+    flex: 1;
+    margin-left: 10rem;
+}
+
+// sass Nesting
+.app-store-info {
+    @include flex-1;
+    padding-top: 30px;
+    justify-content: center;
+    background-color: rgb(207, 219, 241);
+
+    &:first-child {
+        flex: 0.75;
+    }
+
+    p {
+        font-family: fantasy;
+        font-size: larger;
+    }
+}
+
+.pd-2 {
+    padding-top: 30px;
+}
+
+.ht-1 {
+    height: 25rem;
+}
+
+.rpt-grid {
+    justify-content: center;
+    @include flex-1;
+    padding-bottom: 30px;
+}
+
+// sass Nesting
+.rpt-img-row {
+    justify-content:space-between;
+    @include flex-1;
+    padding: 40px 80px 40px 80px;
+
+    img {
+        width:-webkit-fill-available;
+    }
+
+    > div {
+        flex: 0 0 25%;
+        border: 2px solid black;
+        background-color: #FFDFD3;
+        border-radius: 10px;
+        transition: .2s transform ease-in-out;
+        will-change: transform;
+        z-index: 0;
+
+        &:hover {
+            cursor: pointer;
+            background-color: #D291BC;
+            transform: scale(1.05);
+            transform-origin: top left;
+        }
+
+        > div {
+            padding: 15px;
+        }
+    }
+}
+
+.rpt-img-row > div > div + div {
+    @include flex-1;
+}
+
+.rpt-sec1 {
+    flex: 0 0 50%;
+
+    &:first-child {
+        font-family: fantasy;
+        font-size: medium;
+    }
+
+    > p + p {
+        font-family: sans-serif;
+        font-size: medium;
+        color: #097969;
+    }
+}
+
+.rpt-sec2 {
+    flex: 0 0 15%;
+    margin-left: 5px;
+
+    > div {
+        text-align: center;
+        padding: 10px;
+        margin-top: 20px;
+        border: 1px solid cornflowerblue;
+        border-radius: 10px;
+        background-color: cadetblue;
+        font-family: monospace;
+        font-size: large;
+    }
+}
+
+.rpt-sec2 + div {
+    margin-left: 23px;
+}
+
+.rpt-sec3 {
+    flex: 0 0 25%;
+    position: relative;
+    bottom: 5px;
+
+    > p {
+        font-family: monospace;
+        font-size: 20px;
+    }
+
+    > p + p {
+        font-size: small;
+        margin-top: -15px;
+    }
+}
+
+// sass Nesting
+.rpt-grid-row {
+    justify-content:space-between;
+    @include flex-1;
+    padding: 40px 80px 40px 80px;
+    background-color: rgb(207, 219, 241);
+
+    > div {
+        flex: 0 0 20%;
+        border: 2px solid black;
+        background-color: #FFDFD3;
+        border-radius: 10px;
+        transition: .2s transform ease-in-out;
+        will-change: transform;
+        z-index: 0;
+
+        &:hover {
+            cursor: pointer;
+            background-color: #D291BC;
+            transform: scale(1.05);
+            transform-origin: top left;
+        }
+
+        > div {
+            margin-left: 20px;
+
+            > div {
+                width: 40px;
+                height: 40px;
+                border: 1px solid black;
+                border-radius: 50%;
+                margin-top: 20px;
+                background-color: rgb(7, 219, 191);
+                color: white;
+                font-family: sans-serif;
+                font-size: x-large;
+
+                > div {
+                    padding: 7px 10px;
+                }
+            }
+        }
+    }
+
+    p {
+        font-family: fantasy;
+        font-size: medium; 
+    }
+}
+
+/* multiple combinators - select p descendants first and all siblings below it */
+.rpt-grid-row p ~ p{
+    font-family: sans-serif;
+    font-size: small;
+}
+
+.wd-1 {
+    width: 94rem;
+}
+
+.info-txt {
+    padding: 30px;
+    margin-top: 25px;
+    border-radius: 10px;
+    border: solid;
+    background-color: #FFDFD3;
+    transition: .2s transform ease-in-out;
+    will-change: transform;
+    z-index: 0;
+
+    //& parent-selector
+    &:hover {
+        cursor: pointer;
+        background-color: #D291BC;
+        transform: scale(1.05);
+        transform-origin: top left;
+
+        .hide {
+            display: block;
+        }
+    }
+}
+
+/* simple selector - element type */
+nav > ul > li {
+    display: inline;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.flt-right {
+    float: right;
+}
+
+.signin-padding {
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.bg-img {
+    background-image: url('../assets/homepage/Rectangle\ 109@2x.png');
+    background-repeat: no-repeat;
+}
+
+form {
+    border-radius: 20px;
+    margin: 5rem;
+    padding: 3rem;
+    background-color:white;
+}
+
+.fl-form {
+    flex: 1;
+    position: absolute;
+    top: 15px;
+    right: 700px;
+}
+
+.fl-sec {
+    padding: 15px;
+    border: 0.5px solid silver;
+    border-radius: 20px;
+}
+
+.fl-nav {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    background-color: #0047AB;
+    position: relative;
+    border: 1px solid;
+    border-radius: 10px;
+    width: 300px;
+    margin-left: 50px
+}
+
+.fl-nav-content {
+    flex: 0 0 20%;
+    padding: 5px;
+    font-family: monospace;
+    color: white;
+}
+
+.fl-nav-selected {
+    @extend .fl-nav-content;
+    border: 1px solid white;
+    background-color: $green-theme;
+    border-radius: 20px;
+}
+
+.fl-3 > div + div {
+    padding-top: 50px;
+    padding-left: 70px;
+}
+
+.lm-section {
+    position: relative;
+    left: 515px;
+}
+
+input, select {
+    border: 2px solid darkseagreen;
+    border-radius: 5px;
+    background-color: ghostwhite;
+}
+
+label {
+    font-family: sans-serif;
+    font-size: large;
+}
+
+.select1 {
+    width: 23.5rem;
+}
+
+.in-date {
+    width: 10rem;
+}
+
+.hide {
+    display: none;
+}
+
+.hide > p {
+    font-family: sans-serif;
+    font-size: small;
+}
